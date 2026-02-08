@@ -16,7 +16,7 @@
 ```
 SAE-for-CLIP/
 ├── assets/
-│   └── report_collages_clean/    # Визуальные интерпретации 25 фичей (коллажи 4×3)
+│   └── report_collages_clean/    # Визуальные интерпретации 25 фичей (коллажи 4х3)
 ├── checkpoints_v2/
 │   └── sae_best.pth               # Обученная модель SAE (577 МБ, требует Git LFS)
 ├── configs/
@@ -107,7 +107,7 @@ python scripts/analyze_training.py \
 ## Запуск полного цикла обучения (опционально)
 
 ```bash
-# Обучение займёт ~2.5 часа на GPU среднего уровня (RTX 3060/4060) и потребует ~1.5 ГБ дискового пространства для кэша датасета.
+# Обучение займёт ~2.5 часа на GPU (уровня RTX 3060) и потребует ~1.5 ГБ дискового пространства для кэша датасета.
 python scripts/train_sae.py \
   --sae_config configs/sae_config.yaml \
   --training_config configs/training_config.yaml
