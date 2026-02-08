@@ -1,0 +1,67 @@
+# Виртуальные окружения
+venv/
+env/
+.venv/
+default_venv/
+
+# Кэш Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+pip-log.txt
+pip-delete-this-directory.txt
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.log
+.pytest_cache/
+
+# Кэш моделей и датасетов
+.cache/
+.huggingface/
+*.safetensors
+*.bin
+*.pt
+*.pth
+
+# Логи обучения
+logs/
+logs_test/
+
+# Временные данные
+data/food101_sample/
+data/*.npy
+data/*.npz
+
+# Чекпоинты (кроме лучшего)
+checkpoints/
+checkpoints_v2/*_epoch_*.pth
+checkpoints_v2/sae_clip_vitb32_layer11_ef64.pth
+checkpoints_v2/sae_best.pth  # Оригинал игнорируем
+
+# Необработанные результаты интерпретаций
+assets/report_collages/
+
+# Системные файлы Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# VS Code
+.vscode/
+.history/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Git
+.git/

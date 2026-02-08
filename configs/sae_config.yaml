@@ -1,0 +1,10 @@
+clip:
+  model: "ViT-B-32"
+  pretrained: "laion2b_s34b_b79k"
+  layer: 11  # Последний слой трансформера (выбран на Этапе 1)
+
+sae:
+  d_model: 768
+  expansion_factor: 64
+  k: 500
+  sparsity_coeff: 0.00
