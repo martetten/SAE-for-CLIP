@@ -6,7 +6,7 @@
 ```
 | Метрика | Значение | Интерпретация |
 |---------|----------|---------------|
-| **Объяснённая дисперсия (EVR)** | 80.57% | Превышает требование преподавателя (>80%), подтверждает качество реконструкции |
+| **Объяснённая дисперсия (EVR)** | 80.57% | Превышает требование (>80%), подтверждает качество реконструкции |
 | **Стабильность разреженности (L0)** | 500.0 | Точное соблюдение целевого числа активных фичей на всех эпохах обучения |
 | **Деградация на CIFAR-10** | -1.53 п.п. | Минимальная потеря точности на простом датасете (93.66% -> 92.13%) |
 | **Деградация на CIFAR-100** | -10.04 п.п. | Ожидаемая деградация на сложном датасете с низким разрешением (75.91% -> 65.87%) |
@@ -80,7 +80,7 @@ cd SAE-for-CLIP
 
 ### 1. Оценка деградации точности классификации
 ```bash
-# Результаты сохраняются в data/zero_shot_metrics_test.md с таблицей деградации на двух датасетах.
+# Результаты сохраняются в data/zero_shot_metrics_test.md с таблицей деградации на двух датасетах
 python scripts/evaluate_zeroshot.py \
   --sae_checkpoint ./checkpoints_v2/sae_best.pth \
   --cifar_samples 1000 \
@@ -89,7 +89,7 @@ python scripts/evaluate_zeroshot.py \
 ```
 ### 2. Генерация коллажей для интерпретации фичей
 ```bash
-# Создаёт 300 коллажей в assets/report_collages_test/ и таблицу интерпретаций в data/interpretations_test.csv.
+# Создаёт 300 коллажей в assets/report_collages_test/ и таблицу интерпретаций в data/interpretations_test.csv
 python scripts/interpret_latents.py \
   --sae_checkpoint ./checkpoints_v2/sae_best.pth \
   --top_k 12 \
@@ -99,7 +99,7 @@ python scripts/interpret_latents.py \
 ```
 ### 3. Анализ метрик обучения
 ```bash
-# Генерирует таблицу метрик по эпохам обучения.
+# Генерирует таблицу метрик по эпохам обучения
 python scripts/analyze_training.py \
   --logdir ./logs/sae_training_v2/20260206_133909 \
   --output ./data/metrics_test.md
@@ -107,7 +107,7 @@ python scripts/analyze_training.py \
 ## Запуск полного цикла обучения (опционально)
 
 ```bash
-# Обучение займёт ~2.5 часа на GPU (уровня RTX 3060) и потребует ~1.5 ГБ дискового пространства для кэша датасета.
+# Обучение займёт ~2.5 часа на GPU (уровня RTX 3060) и потребует ~1.5 ГБ дискового пространства для кэша датасета
 python scripts/train_sae.py \
   --sae_config configs/sae_config.yaml \
   --training_config configs/training_config.yaml
